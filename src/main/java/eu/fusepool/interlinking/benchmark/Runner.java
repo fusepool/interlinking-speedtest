@@ -131,15 +131,17 @@ public class Runner {
     private void benchmark(int files, Interlinker interlinker, GraphNode node) throws IOException {
         UriRef dataGraphUri = new UriRef(("urn:x-localinstace:/interlinking-benchmark/data/"+ UUID.randomUUID()));
         MGraph dataGraph = tcManager.createMGraph(dataGraphUri);
-        loadFiles(files, dataGraph);
-        node.addProperty(Ontology.triples, new PlainLiteralImpl(Integer.toString(dataGraph.size())));
-        long start = System.currentTimeMillis();
-        TripleCollection interlinks = interlinker.interlink(dataGraph, dataGraphUri);
-        long end = System.currentTimeMillis();
-        node.addProperty(Ontology.duration, new PlainLiteralImpl(Long.toString(end-start)));
-        node.addProperty(Ontology.foundInterlinks, new PlainLiteralImpl(Long.toString(interlinks.size())));
-        tcManager.deleteTripleCollection(dataGraphUri);
-        //node.addProperty(Ontology.triples, new PlainLiteralImpl(Integer.toString(in.size())))
+        try {
+            loadFiles(files, dataGraph);
+            node.addProperty(Ontology.triples, new PlainLiteralImpl(Integer.toString(dataGraph.size())));
+            long start = System.currentTimeMillis();
+            TripleCollection interlinks = interlinker.interlink(dataGraph, dataGraphUri);
+            long end = System.currentTimeMillis();
+            node.addProperty(Ontology.duration, new PlainLiteralImpl(Long.toString(end-start)));
+            node.addProperty(Ontology.foundInterlinks, new PlainLiteralImpl(Long.toString(interlinks.size())));
+        } finally {
+            tcManager.deleteTripleCollection(dataGraphUri);
+        }
     }
     
     /**
