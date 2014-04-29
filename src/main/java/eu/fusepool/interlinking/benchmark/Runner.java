@@ -135,7 +135,7 @@ public class Runner {
             loadFiles(files, dataGraph);
             node.addProperty(Ontology.triples, new PlainLiteralImpl(Integer.toString(dataGraph.size())));
             long start = System.currentTimeMillis();
-            TripleCollection interlinks = interlinker.interlink(dataGraph, dataGraphUri);
+            TripleCollection interlinks = interlinker.interlink(dataGraph, dataGraph);
             long end = System.currentTimeMillis();
             node.addProperty(Ontology.duration, new PlainLiteralImpl(Long.toString(end-start)));
             node.addProperty(Ontology.foundInterlinks, new PlainLiteralImpl(Long.toString(interlinks.size())));
