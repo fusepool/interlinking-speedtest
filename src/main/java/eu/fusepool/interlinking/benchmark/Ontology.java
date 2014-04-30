@@ -26,11 +26,11 @@ import org.apache.clerezza.rdf.core.UriRef;
  */
 public class Ontology {
     
-    public static final UriRef Benchmark = new UriRef("http://fusepool.com(ontology/interlinker-benchmark#Benchmark");
-    static UriRef files = new UriRef("http://fusepool.com(ontology/interlinker-benchmark#files");
-    static UriRef duration = new UriRef("http://fusepool.com(ontology/interlinker-benchmark#duration");
-    static UriRef interlinkerName = new UriRef("http://fusepool.com(ontology/interlinker-benchmark#interlinkerName");
-    static UriRef triples = new UriRef("http://fusepool.com(ontology/interlinker-benchmark#triples");
-    static UriRef foundInterlinks = new UriRef("http://fusepool.com(ontology/interlinker-benchmark#foundInterlinks");
+    public static final UriRef Benchmark = new UriRef("http://fusepool.com/ontology/interlinker-benchmark#Benchmark");
+    public static final UriRef files = new UriRef("http://fusepool.com/ontology/interlinker-benchmark#files");
+    public static final UriRef duration = new UriRef("http://fusepool.com/ontology/interlinker-benchmark#duration");
+    public static final UriRef interlinkerName = new UriRef("http://fusepool.com/ontology/interlinker-benchmark#interlinkerName");
+    public static final UriRef triples = new UriRef("http://fusepool.com/ontology/interlinker-benchmark#triples");
+    public static final UriRef foundInterlinks = new UriRef("http://fusepool.com/ontology/interlinker-benchmark#foundInterlinks");
     
 }
