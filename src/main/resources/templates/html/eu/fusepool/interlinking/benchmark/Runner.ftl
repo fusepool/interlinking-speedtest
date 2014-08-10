@@ -14,7 +14,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<@namespace ont="http://fusepool.com(ontology/interlinker-benchmark#" />
+<@namespace ont="http://fusepool.com/ontology/interlinker-benchmark#" />
 <@namespace ehub="http://stanbol.apache.org/ontology/entityhub/entityhub#" />
 <@namespace cc="http://creativecommons.org/ns#" />
 <@namespace dct="http://purl.org/dc/terms/" />
